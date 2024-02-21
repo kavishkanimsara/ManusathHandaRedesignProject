@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link,NavLink } from 'react-router-dom'
 import manusath_handa_logo from '../assets/manusath_handa_logo.png'
 import SideNav from './SideNav'
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const NavBar = () => {
     const [nav,setNav]= useState(false)
@@ -24,7 +25,9 @@ const NavBar = () => {
     </div>
     <ul className=' hidden md:flex font-medium text-lg gap-8'>
             <li><NavLink className="text-lg  text-gray-700 hover:text-[#FF0064]"  style={navLinkStyle} to='/'>Home</NavLink></li>
-            <li><NavLink className="text-lg text-gray-700 hover:text-[#FF0064]"  style={navLinkStyle} to='/about'>Category</NavLink></li>
+            <li>
+              <AnchorLink href='#category' className="text-lg text-gray-700 hover:text-[#FF0064]">Category</AnchorLink>
+          </li>
             <li><NavLink className="text-lg text-gray-700 hover:text-[#FF0064]"  style={navLinkStyle} to='/projects'>About</NavLink></li>
             <li><NavLink className="text-lg text-gray-700 hover:text-[#FF0064]"  style={navLinkStyle} to='/blog'>Our Team</NavLink></li>
             

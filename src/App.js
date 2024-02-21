@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Category from "./components/Category";
 import Hero from "./components/Hero";
 import Rec from "./pages/Rec";
+import LandingPage from "./pages/LandingPage";
 
 
 function App() {
