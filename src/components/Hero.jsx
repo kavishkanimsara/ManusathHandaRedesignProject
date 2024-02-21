@@ -2,6 +2,7 @@ import React from 'react'
 import heroImage from '../assets/hero_headphone_image.png'
 import NavBar from './NavBar'
 const Hero = () => {
+
     return (
         <div>
             <div className='h-auto md:max-h-screen bg-white'>
@@ -34,6 +35,7 @@ const Hero = () => {
             </div>
         </div>
     )
+
 }
 
 export default Hero
