@@ -13,4 +13,9 @@
     transition: max-height 0.5s ease-out; 
     /* transition-delay: 0.2s; Delay applied to both opening and closing */
   }
+  *{
+    transition: 0.5s;
+  }
+
+  
   
