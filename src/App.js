@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
-import Page from "./pages/Page";
-import Hero from "./components/Hero";
-import Category from "./components/Categories";
+import Category from "./pages/Category";
+import { CategoryPath } from "./firebase";
 
 
 function App() {
@@ -10,11 +9,9 @@ function App() {
 
   return (
     <>
-
       <Routes>
-        <Route path="/" element={<Hero></Hero>}></Route>
-        <Route path="/new" element={<Page></Page>}></Route>
-        <Route path="/catagories/*" element={<Category></Category>}></Route>
+        <Route path="/" element={<LandingPage/>}></Route>
+        <Route path={"/"+CategoryPath+"/*"} element={<Category></Category>}></Route>
       </Routes>
     </>
   );
