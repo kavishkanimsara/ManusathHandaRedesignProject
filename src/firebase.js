@@ -42,3 +42,10 @@ export const getpages = async (page)=>{
   return arrData;
 
 }
+
+export const getRelativeURL=(url)=>{
+  let path = url.split("/");
+  path = path.filter((p)=>p!=='');
+  path = path.slice(1);
+  return '/'+path.join('/');
+}
