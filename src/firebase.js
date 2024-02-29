@@ -49,3 +49,5 @@ export const getRelativeURL=(url)=>{
   path = path.slice(1);
   return '/'+path.join('/');
 }
+
+export const CategoryPath = 'categories';

@@ -1,10 +1,10 @@
-import React, { useState , useRef, useEffect} from 'react';
-import Accordion from '../components/Accordinate'; // corrected import
+import React, { useState, useEffect} from 'react';
 import '../App.css'
 import { getpages, getRelativeURL } from '../firebase';
+import Categories from '../components/Categories';
 
 
-const Page = () => {
+const Category = () => {
 
     const [data, setData] = useState([]);
     const [loadError, setLoadError] = useState(false);
@@ -21,15 +21,14 @@ const Page = () => {
 
     if(!loadError){
     return(<div>
-            {data.length<=0?"loading...":data[0].categories.map((d)=>(
-                <div>
-                    <h1 style={{fontSize:'xx-large',color:'red'}}>catagories</h1>
-                    <label >name: </label><div style={{display:'inline'}}>{d.name}</div><br />
-                    <label >desc: </label><p style={{display:'inline'}}>{d.description}</p><br />
-                    <label >link: </label><a href={"/new"+d.link}>click hear to view page</a><br />
-                    <hr />
-                </div>
-            ))}
+
+
+           {(loadError) ? (<div>Error!</div>) : (
+            data.length>0?<Categories categoryData={data[0].categories} />:<div>Loading...</div>
+            )}
+
+
+
             {data.length<=0?"...":data[0].files.map((d)=>(
                 <div key={d.name}>
                     <h1 style={{fontSize:'xx-large',color:'red'}}>files</h1>
@@ -53,14 +52,6 @@ const Page = () => {
         );
     }
 
-    // return (
-    //     <div>
-    //         {/* <h1>About</h1> */}
-    //         <Accordion data={data} /> {/* corrected prop name */}
-    //     </div>
-    // );
-
-
 }
 
-export default Page;
+export default Category;
