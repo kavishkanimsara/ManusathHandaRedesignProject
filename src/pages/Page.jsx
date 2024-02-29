@@ -1,5 +1,5 @@
 import React, { useState , useRef, useEffect} from 'react';
-import Accordion from '../components/Accordinate'; // corrected import
+import Accordion from '../components/Accordinate'; 
 import '../App.css'
 import { getpages } from '../firebase';
 
