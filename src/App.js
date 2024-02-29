@@ -9,7 +9,7 @@ function App() {
     <>
 
           <Routes>
-            <Route path="/" element={<Hero></Hero>}></Route>
+            <Route path="/" element={<LandingPage/>}></Route>
             <Route path="/new" element={<Page></Page>}></Route>
           </Routes>
     </>
