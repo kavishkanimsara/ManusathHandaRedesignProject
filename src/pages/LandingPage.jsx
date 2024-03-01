@@ -24,9 +24,9 @@ const LandingPage = () => {
   return (
     <>
       <Hero />
-      {(loadError) ? (<div>Error!</div>) : (
+      {(loadError) ? (<div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>Error!</div>) : (
 
-      data.length>0?<Categories categoryData={data[0].categories} />:<div>Loading...</div>
+      data.length>0?<Categories categoryData={data[0].categories} />:<div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>Loading...</div>
       
       )}
       <AboutUs />
