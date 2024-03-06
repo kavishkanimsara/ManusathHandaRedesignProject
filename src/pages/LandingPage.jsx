@@ -1,18 +1,15 @@
 import React from 'react'
 import Hero from '../components/Hero'
 import Categories from '../components/Categories'
-import Accordion from '../components/Accordinate'
-import AboutUs from '../components/AboutUs'
-
+import AboutModal from './AboutModal'
 
 const LandingPage = () => {
   return (
     <>
      <Hero/>
      <Categories/>
-     <AboutUs/>
+     <AboutModal/>
     </>
   )
 }
-
 export default LandingPage
