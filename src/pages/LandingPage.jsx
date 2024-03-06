@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero'
 import Categories from '../components/Categories'
-import Accordion from '../components/Accordinate'
-import AboutUs from '../components/AboutUs'
-import { getpages } from '../firebase'
+import AboutModal from './AboutModal'
+import { getpages } from '../firebase';
 
 const LandingPage = () => {
 
@@ -23,15 +22,10 @@ const LandingPage = () => {
 
   return (
     <>
-      <Hero />
-      {(loadError) ? (<div>Error!</div>) : (
-
-      data.length>0?<Categories categoryData={data[0].categories} />:<div>Loading...</div>
-      
-      )}
-      <AboutUs />
+     <Hero/>
+     <Categories/>
+     <AboutModal/>
     </>
   )
 }
-
 export default LandingPage
