@@ -2,6 +2,8 @@ import React, { useState, useEffect} from 'react';
 import '../App.css'
 import { getpages, getRelativeURL } from '../firebase';
 import Categories from '../components/Categories';
+import NavBar from '../components/NavBar';
+import Audios from '../components/Audios';
 
 
 const Category = () => {
@@ -20,38 +22,69 @@ const Category = () => {
     },[]);
 
     if(!loadError){
-    return(<div>
+        
+        
+        if(data.length>0){
+            if(data[0].categories.length>0 && data[0].files.length>0){
+                return(
+                    <>
+                    <NavBar />
+                    <Categories categoryData={data[0].categories} />
+                    <Audios data={data[0].files}></Audios>
+                    </>
+                )
+            }
+            if(data[0].categories.length>0){
+                return(
+                    <>
+                    <NavBar />
+                    <Categories categoryData={data[0].categories} />
+                    </>
+                )
+            }
+            if(data[0].files.length>0){
+                return(
+                    <>
+                    <NavBar />
+                    <Audios data={data[0].files}></Audios>
+                    </>
+                )
+            }
+            else{
+                return(
+                    <>
+                    <NavBar />
+                    <div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>No Files or folders</div>
+                    </>
+                );
+            }
 
 
-           {(loadError) ? (<div>Error!</div>) : (
-            data.length>0?<Categories categoryData={data[0].categories} />:<div>Loading...</div>
-            )}
+        }
+        else{
+                return(
+                    <>
+                    <NavBar />
+                    <div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>Loading...</div>
+                    </>
+                );
+        }        
 
 
 
-            {data.length<=0?"...":data[0].files.map((d)=>(
-                <div key={d.name}>
-                    <h1 style={{fontSize:'xx-large',color:'red'}}>files</h1>
-                    <label >name: </label><div style={{display:'inline'}}>{d.name}</div><br />
-                    <label >type: </label><p style={{display:'inline'}}>{d.type}</p><br />
-                    <audio controls>
-                        <source src={d.link} type={d.type} />
-                    </audio>
-                    <br />
-                    <hr />
-                </div>
-            ))}
-        </div>
-    );
     }
     else{
         return(
-            <div>
-                Error!
-            </div>
+            <>
+            <NavBar />
+            <div>Error!</div>
+            </>
         );
     }
 
 }
 
 export default Category;
+
+
+
