@@ -28,7 +28,7 @@ const AboutModal = () => {
 
     return (
         <>
-            <div className="h-[100vh] sm:h-64 xl:h-80 2xl:h-98 my-8 ">
+            <div className="h-[100vh] sm:h-64 xl:h-80 2xl:h-98 my-8 " id='about'>
                 <Carousel>
                     {aboutData.map((data, index) => (
                         <div key={index}>
