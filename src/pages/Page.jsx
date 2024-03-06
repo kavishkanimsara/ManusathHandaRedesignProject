@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Accordion from '../components/Accordinate'; // corrected import
 import '../App.css'
+import NavBar from '../components/NavBar';
 
 const Page = () => {
     const [data, setData] = useState([
@@ -35,6 +36,7 @@ const Page = () => {
 
     return (
         <div>
+            <NavBar/>
             {/* <h1>About</h1> */}
             <Accordion data={data} /> {/* corrected prop name */}
         </div>

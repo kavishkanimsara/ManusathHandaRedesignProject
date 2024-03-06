@@ -25,13 +25,13 @@ const Accordion = (props) => {
   };
 
   return (
-    <div id="accordion-collapse" data-accordion="collapse">
+    <div id="accordion-collapse" data-accordion="collapse" className='mx-16'>
       {flow.map((blog) => (
         <div key={blog.id}>
           <h2 id={`accordion-collapse-heading-${blog.id}`}>
             <button
               type="button"
-              className={`flex items-center justify-between w-full p-5 font-medium rtl:text-right text-gray-500 border-gray-200  focus:ring-2 focus:ring-gray-100 hover:bg-red-200 gap-3 ${
+              className={`flex items-center justify-between shadow-sm w-full p-5 font-medium rtl:text-right text-gray-500 border-b-gray-300 rounded-md hover:bg-red-100 gap-3 ${
                 activeIndex === blog.id ? 'active' : ''
               }`}
               onClick={() => toggleAccordion(blog.id)}
