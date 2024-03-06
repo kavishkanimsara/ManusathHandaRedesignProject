@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hero from '../components/Hero'
 import Categories from '../components/Categories'
-import Accordion from '../components/Accordinate'
 import AboutUs from '../components/AboutUs'
 import { getpages } from '../firebase'
 
