@@ -72,9 +72,28 @@ const LandingPage = () => {
   return (
     <>
      <Hero/>
-     {(loadError) ? (<div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>Error!</div>) : (
+    
 
-data.length>0?<Categories categoryData={data[0].categories} />:<div style={{textAlign:'center',padding:'50px 0px',height:'100px',position:'relative'}}>Loading...</div>
+     {(loadError) ? (
+    <div className='py-12 px-8 md:px-16 bg-rose-100'>
+      <div className=' flex flex-wrap gap-8 justify-center'>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong className="font-bold">Error ! </strong>
+          <span className="block sm:inline">can't load the content</span>
+        </div>
+      </div>
+   </div>
+     ) : (
+
+data.length>0?<Categories categoryData={data[0].categories} />:
+<div className='py-12 px-8 md:px-16 bg-rose-100'>
+  <div className=' flex flex-wrap gap-8 justify-center'>
+    <span className='relative flex h-5 w-5'>
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+    </span>
+  </div>
+</div>
+
 
 )}
      <AboutModal/>
