@@ -30,7 +30,7 @@ const NavBar = () => {
           <li>
             <AnchorLink href='#about' className="text-lg text-gray-700 hover:text-[#FF0064]">About</AnchorLink>
           </li>
-          <li><NavLink className="text-lg text-gray-700 hover:text-[#FF0064]" style={navLinkStyle} to='/blog'>Our Team</NavLink></li>
+          <li><NavLink className="text-lg text-gray-700 hover:text-[#FF0064]" style={navLinkStyle} to='/team'>Our Team</NavLink></li>
 
         </ul>
 
