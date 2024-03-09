@@ -3,8 +3,6 @@ import { CategoryPath } from '../firebase';
 
 
 const Categories = (props) => {
-    const imageUrl = 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80';
-    
     return (
         <>
             <section id='category'>
@@ -14,7 +12,7 @@ const Categories = (props) => {
                         { props.categoryData.map((data, index) => (
                             <div key={index} class="md:max-w-xs w-full bg-white border border-gray-200 rounded-lg shadow ">
                                 <a href={"/"+CategoryPath+data.link}>
-                                    <img class="rounded-t-lg" src={imageUrl} alt={data.name + 'image'} />
+                                    <img class="rounded-t-lg" src={data.imageUrl} alt={data.name + 'image'} />
                                 </a>
                                 <div className="p-5 flex flex-col flex-grow">
                                     <div className=' flex-grow'>
