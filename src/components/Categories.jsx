@@ -1,5 +1,10 @@
 import React from 'react'
 import { CategoryPath } from '../firebase';
+import magazinesImage from '../assets/magazines.png';
+import pastPapersImage from '../assets/exams.png';
+import shortStoriesImage from '../assets/stories.png';
+import englishCourseImage from '../assets/english.png';
+import computerKnowledgeImage from '../assets/computer.jpg';
 
 
 const Categories = (props) => {
@@ -10,9 +15,9 @@ const Categories = (props) => {
                     <h1 className=' text-3xl md:text-4xl text-gray-700 font-semibold text-center my-8'>Select Category</h1>
                     <div className=' flex flex-wrap gap-8 justify-center'>
                         { props.categoryData.map((data, index) => (
-                            <div key={index} class="md:max-w-xs w-full bg-white border border-gray-200 rounded-lg shadow ">
+                            <div key={index} class="md:max-w-[280px] w-full bg-white border border-gray-200 rounded-lg shadow ">
                                 <a href={"/"+CategoryPath+data.link}>
-                                    <img class="rounded-t-lg" src={data.imageUrl} alt={data.name + 'image'} />
+                                    <img className="rounded-t-lg object-cover w-full" src={getImageUrl(data.name)} alt={data.name + 'image'} />
                                 </a>
                                 <div className="p-5 flex flex-col flex-grow">
                                     <div className=' flex-grow'>
@@ -42,3 +47,21 @@ const Categories = (props) => {
 }
 
 export default Categories
+
+// Function to get the image URL based on category name
+const getImageUrl = (categoryName) => {
+    switch (categoryName) {
+        case 'MAGAZINES':
+            return magazinesImage;
+        case 'PAST PAPERS':
+            return pastPapersImage;
+        case 'SHORT STORIES':
+            return shortStoriesImage;
+        case 'Spoken English course - Andurata Athwelak':
+            return englishCourseImage;
+        case 'Basic Computer Knowledge course - Andurata Athwelak':
+            return computerKnowledgeImage;
+        default:
+            return ''; // Return a default image or handle missing images
+    }
+};
