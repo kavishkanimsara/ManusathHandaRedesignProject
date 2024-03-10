@@ -3,8 +3,8 @@ import React from 'react'
 const AboutUs = ({imageUrl, description , title}) => {
     return (
         <div>
-            <div className=" block md:grid grid-cols-3 items-start bg-white md:flex-row md:max-w-full md:justify-between px-12 py-12">
-                <div>
+            <div className=" block md:grid grid-cols-4 items-start bg-white md:flex-row md:max-w-full md:justify-between px-12 py-8">
+                <div className='col-span-2'>
                     <img src={imageUrl}
                     alt={title}
                     className='w-full rounded-md object-cover'
