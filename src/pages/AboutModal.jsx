@@ -1,6 +1,9 @@
 import React from 'react'
 import { Carousel } from 'flowbite-react';
 import AboutUs from '../components/AboutUs';
+import  { CustomFlowbiteTheme } from 'flowbite-react';
+import { Flowbite } from 'flowbite-react';
+
 const aboutData = [
     {
         title: 'What is Manusath Handa?',
@@ -28,8 +31,8 @@ const AboutModal = () => {
 
     return (
         <>
-            <div className="h-[100vh] sm:h-64 xl:h-80 2xl:h-98 my-8 " id='about'>
-                <Carousel>
+            <div className="h-[100vh] sm:h-[70vh] my-8 " id='about'>
+                <Carousel >
                     {aboutData.map((data, index) => (
                         <div key={index}>
                             <AboutUs title={data.title} imageUrl={data.imageUrl} description={data.description} />
