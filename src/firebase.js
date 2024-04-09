@@ -18,7 +18,7 @@ const pagesRef = collection(db, "pages");
 export const getpages = async (page)=>{
   const arrData =[];
   try{
-    const q = query(pagesRef, where("path", "==", page) , limit(1));
+    const q = query(pagesRef, where("path", "==",decodeURI(page)) , limit(1));
   const querySnapshot = await getDocs(q);
  if(querySnapshot.empty){
     throw "404";
