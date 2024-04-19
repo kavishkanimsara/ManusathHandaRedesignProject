@@ -35,31 +35,37 @@ const LandingPage = () => {
         imageUrl: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
         name: 'MAGAZINES',
         description: 'Listen to an ever-growing collection of the most popular children\'s magazines in sinhala and tamil',
-        link: '/magazines'
+        link: '/Magazines'
     },
     {
         imageUrl: 'https://www.english-study-online.com/wordpress/wp-content/uploads/2019/04/ECFF9F3B-9C38-40E3-8FFF-E92708518FC0-300x166.jpeg',
         name: 'PAST PAPERS',
         description: 'Listen to the past papers of G.C.E. O/L and G.C.E. A/L exams in sinhala and tamil mediums.',
-        link: '/past_papers'
+        link: '/Past_Papers'
     },
     {
         imageUrl: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
         name: 'SHORT STORIES',
         description: 'Listen to many short stories. They are fun and interesting. You can enjoy them whenever you want.',
-        link: '/short_stories'
+        link: '/Short_Stories'
     },
     {
         imageUrl: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
         name: 'Spoken English course - Andurata Athwelak',
         description: 'Listen to a series of a day to day conversions to improve your spoken english skills.',
-        link: '/english_course'
+        link: '/Spoken_English_course-Andurata_Athwelak'
     },
     {
         imageUrl: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
         name: 'Basic Computer Knowledge course - Andurata Athwelak',
         description: 'Listen to a growing collection that gives basic computer knowledge for day to day life ',
-        link: '/computer_knowledge'
+        link: '/Basic_Computer_Knowledge_course-Andurata_Athwelak'
+    },
+    {
+        imageUrl: 'https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80',
+        name: 'Other',
+        description: 'Listen to a variety of intriguing content beyond the usual selection.',
+        link: '/Basic_Computer_Knowledge_course-Andurata_Athwelak'
     },
 ];
 
