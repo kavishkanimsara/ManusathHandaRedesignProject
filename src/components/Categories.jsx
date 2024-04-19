@@ -5,6 +5,7 @@ import pastPapersImage from '../assets/exams.png';
 import shortStoriesImage from '../assets/stories.png';
 import englishCourseImage from '../assets/english.png';
 import computerKnowledgeImage from '../assets/computer.jpg';
+import defaultImage from '../assets/hero_headphone_image.png'
 
 
 const Categories = (props) => {
@@ -63,6 +64,6 @@ const getImageUrl = (categoryName) => {
         case 'Basic Computer Knowledge course - Andurata Athwelak':
             return computerKnowledgeImage;
         default:
-            return ''; // Return a default image or handle missing images
+            return defaultImage; // Return a default image or handle missing images
     }
 };
