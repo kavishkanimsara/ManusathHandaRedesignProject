@@ -1,0 +1,19 @@
+{
+  "projects": {
+    "default": "manusathhanda"
+  },
+  "targets": {
+    "manusathhanda": {
+      "hosting": {
+        "ELib": [
+          "manusathhanda-2024"
+        ],
+        "manusathhanda-2024": [
+          "manusathhanda-2024.web.app"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
