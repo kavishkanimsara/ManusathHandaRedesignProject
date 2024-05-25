@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link,NavLink } from 'react-router-dom'
 import { IoMenu } from "react-icons/io5";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 const SideNav = () => {
     const [isOpen, setIsOpen] = useState(false);
     
@@ -36,7 +38,7 @@ const SideNav = () => {
             <>
               <div className="fixed inset-0 w-full bg-gray-800 opacity-50 dark:bg-gray-500" onClick={toggleNavbar}></div>
               <div
-                className={`absolute inset-0 z-10 h-screen p-3 text-red-400 transform bg-red-50 dark:bg-gray-800 w-80 lg:w-96 lg:block transition-transform duration-300 ${
+                className={`fixed inset-0 z-10 h-screen p-3 text-red-400 transform bg-red-50 dark:bg-gray-800 w-80 lg:w-96 lg:block transition-transform duration-300 ${
                   isOpen ? "translate-x-0" : "-translate-x-full"
                 }`}
               >
@@ -52,10 +54,10 @@ const SideNav = () => {
                     </button>
                   </div>
                   <ul className="text-left mt-7">
-                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={navLinkStyle} to='/'>Home</NavLink></li>
-                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={navLinkStyle} to='/about'>Category</NavLink></li>
-                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={navLinkStyle} to='/projects'>About</NavLink></li>
-                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={navLinkStyle} to='/blog'>Our Team</NavLink></li>
+                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={{navLinkStyle}} to='/'>Home</NavLink></li>
+                  <li className=' my-4'><AnchorLink className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} style={{navLinkStyle}} href='#category'>Category</AnchorLink></li>
+                  <li className=' my-4'><AnchorLink className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} style={{navLinkStyle}} href='#about'>About</AnchorLink></li>
+                  <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={{navLinkStyle}} to='/team'>Our Team</NavLink></li>
                     {/* Add similar list items for other links */}
                   </ul>
                 

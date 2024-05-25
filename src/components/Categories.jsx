@@ -17,7 +17,7 @@ const Categories = (props) => {
                     <h1 className=' text-3xl md:text-4xl text-gray-700 font-semibold text-center my-8'>Select Category</h1>
                     <div className=' flex flex-wrap gap-8 justify-center'>
                         { props.categoryData.map((data, index) => (
-                            <div key={index} class="md:max-w-[280px] w-full bg-white border border-gray-200 rounded-lg shadow ">
+                            <div key={index} className="md:max-w-[280px] w-full bg-white border border-gray-200 rounded-lg shadow ">
                                 <a href={"/"+CategoryPath+data.link}>
                                     <img className="rounded-t-lg object-cover w-full" src={getImageUrl(data.name)} alt={data.name + 'image'} />
                                 </a>
