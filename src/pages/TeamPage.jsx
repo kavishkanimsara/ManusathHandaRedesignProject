@@ -1,3 +1,5 @@
+import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
 import React from 'react';
 
 const TeamPage = () => {
@@ -183,6 +185,8 @@ const TeamPage = () => {
   ]
 
   return (
+    <>
+    <NavBar/>
     <div className="bg-pink-100 min-h-screen">
       <h1 className="text-center text-2xl sm:text-4xl pt-10 pb-6">OUR TEAM</h1>
       <div className="flex justify-center items-center">
@@ -334,6 +338,8 @@ const TeamPage = () => {
         
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
