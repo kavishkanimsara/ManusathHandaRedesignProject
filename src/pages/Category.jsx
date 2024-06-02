@@ -4,6 +4,7 @@ import { getpages, getRelativeURL } from '../firebase';
 import Categories from '../components/Categories';
 import NavBar from '../components/NavBar';
 import Audios from '../components/Audios';
+import Footer from '../components/Footer';
 
 
 const Category = () => {
@@ -31,6 +32,7 @@ const Category = () => {
                     <NavBar />
                     <Categories categoryData={data[0].categories} />
                     <Audios data={data[0].files}></Audios>
+                    <Footer />
                     </>
                 )
             }
@@ -39,6 +41,7 @@ const Category = () => {
                     <>
                     <NavBar />
                     <Categories categoryData={data[0].categories} />
+                    <Footer />
                     </>
                 )
             }
@@ -47,6 +50,7 @@ const Category = () => {
                     <>
                     <NavBar />
                     <Audios data={data[0].files}></Audios>
+                    <Footer />
                     </>
                 )
             }
@@ -62,6 +66,7 @@ const Category = () => {
                         </div>
                         </div>
                     </div>
+                    <Footer />
                     </>
                 );
             }
@@ -72,13 +77,14 @@ const Category = () => {
                 return(
                     <>
                     <NavBar />
-                    <div className='py-12 px-8 md:px-16 bg-rose-100'>
+                    <div className='py-12 px-8 md:px-16 bg-rose-100' style={{paddingTop:'20%',paddingBottom:'20%'}}>
                         <div className=' flex flex-wrap gap-8 justify-center'>
                             <span className='relative flex h-5 w-5'>
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                             </span>
                         </div>
                     </div>
+                    <Footer />
                     </>
                 );
         }        
@@ -98,6 +104,7 @@ const Category = () => {
                     </div>
                 </div>
             </div>
+            <Footer />
             </>
         );
     }

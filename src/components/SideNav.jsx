@@ -3,7 +3,7 @@ import { Link,NavLink } from 'react-router-dom'
 import { IoMenu } from "react-icons/io5";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
-const SideNav = () => {
+const SideNav = ({NavToAnchor}) => {
     const [isOpen, setIsOpen] = useState(false);
     
     const toggleNavbar = () => {
@@ -55,8 +55,8 @@ const SideNav = () => {
                   </div>
                   <ul className="text-left mt-7">
                   <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={{navLinkStyle}} to='/'>Home</NavLink></li>
-                  <li className=' my-4'><AnchorLink className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} style={{navLinkStyle}} href='#category'>Category</AnchorLink></li>
-                  <li className=' my-4'><AnchorLink className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} style={{navLinkStyle}} href='#about'>About</AnchorLink></li>
+                  <li className=' my-4'><NavToAnchor className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} displayName="Category" anchortag='#category'></NavToAnchor></li>
+                  <li className=' my-4'><NavToAnchor className="text-sm text-gray-700 hover:text-blue-700" onClick={toggleNavbar} displayName="About" anchortag='#about'></NavToAnchor></li>
                   <li className=' my-4'><NavLink className="text-sm text-gray-700 hover:text-blue-700"  style={{navLinkStyle}} to='/team'>Our Team</NavLink></li>
                     {/* Add similar list items for other links */}
                   </ul>
