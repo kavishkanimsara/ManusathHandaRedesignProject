@@ -4,6 +4,8 @@ import Categories from '../components/Categories'
 import AboutModal from './AboutModal'
 import { getpages } from '../firebase';
 import Footer from '../components/Footer';
+import {useLocation} from 'react-router-dom';
+
 
 const LandingPage = () => {
 
@@ -75,7 +77,14 @@ const LandingPage = () => {
   },
 ];
 
+const {hash} = useLocation();
+
 useEffect(() => {
+  if(hash){
+    setTimeout(() => {
+    document.getElementById(hash.slice(1))?.scrollIntoView();
+    },500);
+  }
   setData([{categories:categoryData}]);
 }, []);
 

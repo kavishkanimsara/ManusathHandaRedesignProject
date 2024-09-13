@@ -1,3 +1,5 @@
+import Footer from '../components/Footer';
+import NavBar from '../components/NavBar';
 import React from 'react';
 
 const TeamPage = () => {
@@ -179,15 +181,17 @@ const TeamPage = () => {
     {SDDC:['Rtr.Krishantha Kumara']},
     {CDIA:['Rtr.Krishantha Kumara']},
     {AID:['Rtr.Shehan Lokuwella']},
-    {DEV:['Rtr.Sakindu Ransindu Perera','Rtr.Kavishka Nimsara','Rtr.Yasiru Ramosh','Rtr.Asiri Gayashan']}
+    {DEV:['Rtr.Kavishka Nimsara','Rtr.Yasiru Ramosh','Rtr.Asiri Gayashan','Rtr.Sakindu Ransindu Perera']}
   ]
 
   return (
-    <div className="bg-pink-100">
+    <>
+    <NavBar/>
+    <div className="bg-pink-100 min-h-screen">
       <h1 className="text-center text-2xl sm:text-4xl pt-10 pb-6">OUR TEAM</h1>
       <div className="flex justify-center items-center">
         <div className="w-4/5 shadow-lg bg-white p-10 rounded-lg overflow-x-auto">
-          <div className="mb-20">
+          <div className="mb-5">
             <h2 className="text-xl sm:text-3xl text-center sm:text-left underline mb-6">Creators and Designers</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {designers.map((member, index) => (
@@ -197,48 +201,13 @@ const TeamPage = () => {
               ))}
             </div>
           </div>
-
-
-
-          <div>
-            <h2 className="text-xl sm:text-3xl text-center sm:text-left underline mb-6">Recording Team</h2>
-
-            <details className="mb-5">
-              <summary className="text-xl sm:text-2xl">2019/2020</summary>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
-                {Voiceteam1.map((member, index) => (
-                  <React.Fragment key={index}>
-                    <div >
-                      <li>{member.col1}</li>
-                    </div>
-                    <div >
-                      <li>{member.col2}</li>
-                    </div>
-    
-                  </React.Fragment>
-                ))}
-              </div>
-            </details>
-            <details className="mb-20">
-              <summary className="text-xl sm:text-2xl">2023/2024</summary>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
-                {Voiceteam2.map((member, index) => (
-                  <React.Fragment key={index}>
-                    <div >
-                      <li>{member}</li>
-                    </div>
-
-                  </React.Fragment>
-                ))}
-              </div>
-            </details>
-
-          </div>
-
           <div>
   <h2 className="text-xl sm:text-3xl text-center sm:text-left underline mb-6">2023-2024 Team</h2>
 
-  <h3 className="text-lg sm:text-2x text-primary">President of the Club</h3>
+  <details className="mb-5">
+              <summary className="text-xl sm:text-2xl">Planning Committee</summary>
+           
+              <h3 className="text-lg sm:text-2x text-primary">President of the Club</h3>
   <div className="grid grid-cols-1  sm:grid-cols-3 gap-4 mt-1">
     {planingTeam.map((member, index) => (
       member.POC && (
@@ -311,7 +280,12 @@ const TeamPage = () => {
       ))
     ))}
   </div>
-  <h3 className="text-lg sm:text-2x text-primary mt-6">Developers</h3>
+
+            </details>
+  
+            <details className="mb-5">
+              <summary className="text-xl sm:text-2xl">Development Team</summary>
+              <h3 className="text-lg sm:text-2x text-primary mt-1">Developers</h3>
   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
     {devTeam.map((member, index) => (
       member.DEV && member.DEV.map((value, valueIndex) => (
@@ -321,11 +295,51 @@ const TeamPage = () => {
       ))
     ))}
   </div>
+            </details>
+
 </div>
 
+
+<div>
+            <h2 className="text-xl sm:text-3xl text-center sm:text-left underline mb-6">Recording Team</h2>
+
+            <details className="mb-5">
+              <summary className="text-xl sm:text-2xl">2019/2020</summary>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
+                {Voiceteam1.map((member, index) => (
+                  <React.Fragment key={index}>
+                    <div >
+                      <li>{member.col1}</li>
+                    </div>
+                    <div >
+                      <li>{member.col2}</li>
+                    </div>
+    
+                  </React.Fragment>
+                ))}
+              </div>
+            </details>
+            <details className="mb-20">
+              <summary className="text-xl sm:text-2xl">2023/2024</summary>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-1">
+                {Voiceteam2.map((member, index) => (
+                  <React.Fragment key={index}>
+                    <div >
+                      <li>{member}</li>
+                    </div>
+
+                  </React.Fragment>
+                ))}
+              </div>
+            </details>
+
+          </div>
         </div>
+        
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 

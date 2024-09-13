@@ -4,8 +4,30 @@ import { MdCall,MdAlternateEmail  } from "react-icons/md";
 import { FaTwitter,FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import rotractWhiteLogo from '../assets/white logo2.png'
 const Footer = () => {
+
+  const Contact = ({name,mobile,displayMobile,email,post,com})=>{
+    return (
+
+      <div className='mb-4'>
+          <p className=' font-medium text-white mb-2'>{name}</p>
+          <p className=' text-sm ml-2'>{post}</p>
+          <p className=' text-sm ml-2'>{com}</p>
+
+          <div className=' flex gap-3  text-sm items-center ml-2'>
+              <MdCall  size={22}/>
+              <a href={`tel:${mobile}`} className=" hover:text-red-700">{displayMobile}</a><br />
+          </div>
+          <div className=' flex gap-3  text-sm items-center ml-2'>
+              <MdAlternateEmail  size={22}/>
+              <a href={`mailto:${email}`} className=" hover:text-red-700">{email}</a><br />
+          </div>
+      </div>
+
+    );
+  }
+
   return (
-    <footer id="footer" className="bg-gray-900 text-gray-400 py-8 px-4 md:px-0">
+    <footer id="footer" className="bg-gray-900 text-gray-400 py-8 px-4">
       <div className="container mx-auto">
         <div className=" md:flex justify-between">
           <div className="w-full md:w-1/3">
@@ -26,29 +48,11 @@ const Footer = () => {
                   Rotaract Club of University of Moratuwa,<br /> University of Moratuwa,<br /> Bandaranayake Mawatha,<br /> Moratuwa. <br /> 10400
                 </li>
                 <li>
-                  <div className='mb-4'>
-                      <p className=' font-medium text-white mb-2'>Janith Bimsara</p>
-                      <div className=' flex gap-3  text-sm items-center'>
-                          <MdCall  size={22}/>
-                          <a href="tel:+94719108576" className=" hover:text-red-700">(+94)71 910 8576</a><br />
-                      </div>
-                      <div className=' flex gap-3  text-sm items-center'>
-                          <MdAlternateEmail  size={22}/>
-                          <a href="mailto:jbimsara98@gmail.com" className=" hover:text-red-700">jbimsara98@gmail.com</a><br />
-                      </div>
-                      
-                  </div>
-                  <div>
-                      <p className=' font-medium text-white mb-2'>Sithira Liyanage</p>
-                      <div className=' flex gap-3  text-sm items-center'>
-                          <MdCall  size={22}/>
-                          <a href="tel:+94712998848" className=" hover:text-red-700">(+94)71 299 8848</a><br />
-                      </div>
-                      <div className=' flex gap-3  text-sm items-center'>
-                          <MdAlternateEmail  size={22}/>
-                          <a href="mailto:sithiraliyanage@gmail.com" className=" hover:text-red-700">sithiraliyanage@gmail.com</a>
-                      </div>      
-                  </div>
+
+                <Contact name="Rtr. Thejan Dulara" mobile="+94714861243" displayMobile="(+94)71 486 1243" email="thejan@mail.rotaractmora.org" post="Co-Director" com="Community Service" />
+                <Contact name="Rtr. Renuja Muthugala" mobile="+94765411386" displayMobile="(+94)76 541 1386" email="renuja@mail.rotaractmora.org" post="Co-Director" com="Community Service" />
+                <Contact name="Rtr. Nawoda Thathsarani" mobile="+94771806164" displayMobile="(+94)77 180 6164" email="nawoda@mail.rotaractmora.org" post="Co-Director" com="Community Service" />
+
                 </li>
               </ul>
           </div>
