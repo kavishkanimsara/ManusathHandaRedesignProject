@@ -5,9 +5,11 @@ import Page from "./pages/Page";
 import Category from "./pages/Category";
 import { CategoryPath } from "./firebase";
 import TeamPage from "./pages/TeamPage";
+import ReactGA from 'react-ga4';
 
 function App() {
 
+  ReactGA.initialize('G-NNPGGBLR49');
 
   return (
     <>

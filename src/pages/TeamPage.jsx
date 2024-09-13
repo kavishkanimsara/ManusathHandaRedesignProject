@@ -1,8 +1,13 @@
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import React from 'react';
+import ReactGA from 'react-ga4';
+
 
 const TeamPage = () => {
+
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Team Page" });
+
   const Voiceteam1 = [
     { col1: 'Rtr. U.R.B.M.Ariyadasa', col2: 'Rtr. R.M.O.Gangangana' },
     { col1: 'Rtr. L.Tharindu Nirmal Wickremasinghe', col2: 'Rtr. Tharani Karunathilake' },

@@ -4,10 +4,13 @@ import Categories from '../components/Categories'
 import AboutModal from './AboutModal'
 import { getpages } from '../firebase';
 import Footer from '../components/Footer';
+import ReactGA from 'react-ga4';
 import {useLocation} from 'react-router-dom';
 
 
 const LandingPage = () => {
+
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Landing Page" });
 
   const [data, setData] = useState([]);
   const [loadError, setLoadError] = useState(false);

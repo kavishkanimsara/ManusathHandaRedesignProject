@@ -4,10 +4,14 @@ import { getpages, getRelativeURL } from '../firebase';
 import Categories from '../components/Categories';
 import NavBar from '../components/NavBar';
 import Audios from '../components/Audios';
+import ReactGA from 'react-ga4';
+
 import Footer from '../components/Footer';
 
 
 const Category = () => {
+
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Categories" });
 
     const [data, setData] = useState([]);
     const [loadError, setLoadError] = useState(false);

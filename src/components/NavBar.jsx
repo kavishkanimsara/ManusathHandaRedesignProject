@@ -51,7 +51,7 @@ const NavBar = () => {
         </ul>
 
         <div className=' flex items-center gap-8'>
-          <a href='https://portal.manusathhanda.rotaractmora.org' className='py-3 px-4 md:px-8 rounded-full bg-gradient-to-b from-[#FF0064] to-[#D60070] text-white text-sm font-semibold'>Donate Voice</a>
+          <a href='https://portal.manusathhanda.rotaractmora.org' className='manusath-handa-portal-btn py-3 px-4 md:px-8 rounded-full bg-gradient-to-b from-[#FF0064] to-[#D60070] text-white text-sm font-semibold'>Donate Voice</a>
         </div>
 
       </div>
