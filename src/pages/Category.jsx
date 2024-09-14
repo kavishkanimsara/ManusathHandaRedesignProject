@@ -11,16 +11,16 @@ import Footer from '../components/Footer';
 
 const Category = () => {
 
-    ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Categories" });
-
+    
     const [data, setData] = useState([]);
     const [loadError, setLoadError] = useState(false);
-
+    
     useEffect(()=>{
         const relativePath = getRelativeURL(window.location.pathname);
         getpages(relativePath).then((d) => {
             console.log(d);
             setData(d);
+            ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Categories" });
         }).catch((e)=>{
             console.error(e);setLoadError(true);
         });

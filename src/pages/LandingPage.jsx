@@ -10,10 +10,13 @@ import {useLocation} from 'react-router-dom';
 
 const LandingPage = () => {
 
-  ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Landing Page" });
-
+  
   const [data, setData] = useState([]);
   const [loadError, setLoadError] = useState(false);
+  
+  useEffect(() => {
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Landing Page" });
+  }, []);
 
 
     //////////////////////////////////
