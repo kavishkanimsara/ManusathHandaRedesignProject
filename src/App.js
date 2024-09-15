@@ -7,13 +7,14 @@ import { CategoryPath } from "./firebase";
 import TeamPage from "./pages/TeamPage";
 import ReactGA from 'react-ga4';
 
+ReactGA.initialize('G-EHYFC5TPW5',{debug: process.env.REACT_APP_DEBUG_MODE});
+
 function App() {
 
-  ReactGA.initialize('G-NNPGGBLR49');
+  
 
   return (
     <>
-
           <Routes>
             <Route path="/" element={<LandingPage/>}></Route>
             <Route path={"/"+CategoryPath+"/*"} element={<Category></Category>}></Route>

@@ -20,7 +20,7 @@ const Category = () => {
         getpages(relativePath).then((d) => {
             console.log(d);
             setData(d);
-            ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Categories" });
+            ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Categories" ,debug: process.env.REACT_APP_DEBUG_MODE});
         }).catch((e)=>{
             console.error(e);setLoadError(true);
         });

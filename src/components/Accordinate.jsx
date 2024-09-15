@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga4';
 
 const Accordion = (props) => {
   const flow = props.data;
@@ -63,11 +64,16 @@ const Accordion = (props) => {
           >
             
             <div>
-          <audio style={{'display':'inline'}} controls>
+          <audio style={{'display':'inline'}} onPlay={()=>
+              {
+                  ReactGA.send({ hitType: 'event', eventCategory: 'Media', eventAction: 'Play', eventLabel: 'Play Audio' , fileName: blog.name , eventValue: 2});
+                  console.log('Audio Played');
+                 } } controls>
+                  
               <source src={blog.link} type={blog.type} />
           </audio>
                            
-          <a href={blog.link} download={"ManusathHanda-Audio "+blog.name} style={{'display':'inline'}}>
+          <a href={blog.link} download={"ManusathHanda-Audio "+blog.name} onClick={()=>ReactGA.send({ hitType: 'event', eventCategory: 'Download', eventAction: 'Click', eventLabel: 'Download Audio' , fileName: blog.name , eventValue: 1})} style={{'display':'inline'}} target="_blank">
               Download
           </a>
 

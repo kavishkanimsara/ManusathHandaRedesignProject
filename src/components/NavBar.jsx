@@ -3,10 +3,12 @@ import { Link, NavLink } from 'react-router-dom'
 import manusath_handa_logo from '../assets/manusath_handa_logo.png'
 import SideNav from './SideNav'
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import ReactGA from 'react-ga4';
 
 const NavBar = () => {
   const loc = useLocation();
+  const navigate = useNavigate();
   const [nav, setNav] = useState(false)
   const handleNav = () => {
     setNav(!nav);
@@ -17,6 +19,12 @@ const NavBar = () => {
 
     }
   }
+
+  const gotoLink =(link)=>{
+    ReactGA.send({ hitType: 'event', eventCategory: 'Navigation', eventAction: 'Click', eventLabel: 'Donate Voice', eventValue: 1 ,hitCallback: ()=>window.location.assign(link)});
+    
+  }
+
   const NavToAnchor = ({anchortag,displayName,className,onClick=null}) => {
     const path= loc.pathname;
     console.log(anchortag,className);
@@ -51,7 +59,7 @@ const NavBar = () => {
         </ul>
 
         <div className=' flex items-center gap-8'>
-          <a href='https://portal.manusathhanda.rotaractmora.org' className='manusath-handa-portal-btn py-3 px-4 md:px-8 rounded-full bg-gradient-to-b from-[#FF0064] to-[#D60070] text-white text-sm font-semibold'>Donate Voice</a>
+          <a onClick={()=>gotoLink('https://portal.manusathhanda.rotaractmora.org')} className='manusath-handa-portal-btn py-3 px-4 md:px-8 rounded-full bg-gradient-to-b from-[#FF0064] to-[#D60070] text-white text-sm font-semibold'>Donate Voice</a>
         </div>
 
       </div>

@@ -6,7 +6,7 @@ import ReactGA from 'react-ga4';
 
 const TeamPage = () => {
 
-  ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Team Page" });
+  ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Team Page", debug: process.env.REACT_APP_DEBUG_MODE });
 
   const Voiceteam1 = [
     { col1: 'Rtr. U.R.B.M.Ariyadasa', col2: 'Rtr. R.M.O.Gangangana' },

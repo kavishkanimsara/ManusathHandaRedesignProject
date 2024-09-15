@@ -15,7 +15,7 @@ const LandingPage = () => {
   const [loadError, setLoadError] = useState(false);
   
   useEffect(() => {
-    ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Landing Page" });
+    ReactGA.send({ hitType: 'pageview', page: window.location.pathname, title: "Landing Page" ,debug:process.env.REACT_APP_DEBUG_MODE });
   }, []);
 
 
